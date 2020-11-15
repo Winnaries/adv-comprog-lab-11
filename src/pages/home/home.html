@@ -1,14 +1,27 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Infinite Scroll
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-item *ngFor="let student of students">
+      <p>{{student.id}}</p>
+      <p><b>Q1: </b>{{student.quiz1}}</p>
+      <p><b>Q2: </b>{{student.quiz2}}</p>
+      <p><b>Q3: </b>{{student.quiz3}}</p>
+      <p><b>Q4: </b>{{student.quiz4}}</p>
+      <p><b>Q5: </b>{{student.quiz5}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" position="bottom" (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content 
+      loadingSpinner="bubbles" 
+      loadingText="Loading">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
