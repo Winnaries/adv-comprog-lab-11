@@ -1,0 +1,7 @@
+{
+  "name": "InfiniteScroll",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "ionic-angular"
+}
